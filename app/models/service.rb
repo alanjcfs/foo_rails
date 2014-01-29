@@ -1,5 +1,5 @@
 class Service < ActiveRecord::Base
-  belongs_to :meeting
+  belongs_to :meeting, inverse_of: :services
   after_save :update_meetings_total_length
 
   def update_meetings_total_length
